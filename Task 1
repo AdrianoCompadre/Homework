@@ -1,0 +1,34 @@
+import os
+import sys
+import psutil
+
+print('Привет, программист!')
+
+name = input("Ваше имя: ")
+
+print(name, ', добро пожаловать в мир Python!')
+answer = ""
+
+# PEP-8
+while answer != "q":
+    answer = input("Давайте поработаем? (Y/N/Q)")
+    if answer == "y":
+        print("С чего начнём?")
+        print("1 - Вывести список файлов")
+        print("2 - Вывести информацию о системе")
+        do = int(input("Укажите номер действия:"))
+
+        if do == 1:
+            print(os.listdir())
+
+        elif do == 2:
+            print("Текущая дериктория: ", os.getcwd())
+            print("Платформа (ОС): ", sys.platform)
+            print("Кодировка файловой системы : ", sys.getfilesystemencoding())
+            print("Текущий пользователь системы: ", os.getlogin())
+            print("Количество CPU: ", psutil.cpu_count())
+    elif answer == "n":
+        print("До свидания!")
+        break
+if answer == 'q':
+    print("Ну и пожалуйста, чао!")
