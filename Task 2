@@ -1,0 +1,5 @@
+time = int(input('Select quontity of seconds: '))
+hh = int(time / 3600)
+mm = int((time - hh * 3600) / 60)
+ss = time - hh * 3600 - mm * 60
+print(f'{hh:02.0f}:{mm:02.0f}:{ss:02.0f}')
